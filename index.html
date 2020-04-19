@@ -13,13 +13,5 @@
 </head>
 <body>
     <webview id="mainWebview" src="https://music.yandex.ru" style="display:inline-flex; width:1000px; height:700px" allowpopups></webview>
-    <script>
-        let mainWebview = document.querySelector("#mainWebview")
-        setTimeout(async () => {
-            console.log(123)
-            let res = await mainWebview.executeJavascript('window.document.body.innerHTML')
-            console.log(res)
-        }, 1000)
-    </script>
 </body>
 </html>
