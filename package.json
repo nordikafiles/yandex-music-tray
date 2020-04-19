@@ -1,13 +1,16 @@
 {
   "name": "yandex-music-tray",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "main.js",
   "license": "MIT",
   "dependencies": {
     "electron": "^8.2.3",
+    "electron-packager": "^14.2.1",
     "menubar": "^8.0.1"
   },
   "scripts": {
-    "dev": "electron main.js"
+    "dev": "electron main.js",
+    "package": "electron-packager ./ --platform=darwin --arch=x64 --out=out --overwrite",
+    "package:win32": "electron-packager ./ --platform=win32 --arch=x64 --out=out --overwrite"
   }
 }
