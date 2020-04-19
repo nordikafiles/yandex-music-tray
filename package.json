@@ -1,0 +1,13 @@
+{
+  "name": "yandex-music-tray",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^8.2.3",
+    "menubar": "^8.0.1"
+  },
+  "scripts": {
+    "dev": "electron main.js"
+  }
+}
