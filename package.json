@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "electron main.js",
-    "package": "electron-packager ./ --platform=darwin --arch=x64 --out=out --overwrite",
+    "package": "electron-packager ./ \"Yandex Music\" --platform=darwin --arch=x64 --icon=assets/app.icns --out=out --overwrite",
     "package:win32": "electron-packager ./ --platform=win32 --arch=x64 --out=out --overwrite"
   }
 }
