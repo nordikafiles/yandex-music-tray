@@ -13,5 +13,33 @@
 </head>
 <body>
     <webview id="mainWebview" src="https://music.yandex.ru" style="display:inline-flex; width:1000px; height:700px" allowpopups></webview>
+    <div onclick="document.body.innerHTML += '123'">alala</div>
+    <script>
+        let mainWebview = document.querySelector('#mainWebview')
+
+        function prev() {
+            mainWebview.executeJavaScript(`
+                document.querySelector('div.player-controls__btn.deco-player-controls__button.player-controls__btn_prev').click()
+            `)
+        }
+
+        function next() {
+            mainWebview.executeJavaScript(`
+                document.querySelector('div.player-controls__btn.deco-player-controls__button.player-controls__btn_next').click()
+            `)
+        }
+        
+        function play() {
+            mainWebview.executeJavaScript(`
+                document.querySelector('div.player-controls__btn.deco-player-controls__button.player-controls__btn_play').click()
+            `)
+        }
+
+        require('electron').ipcRenderer.on('hotkey', (event, key) => {
+            if (key == 'MediaPreviousTrack' || key == 'Cmd+Shift+Option+5') prev()
+            if (key == 'MediaPlayPause' || key == 'Cmd+Shift+Option+6') play()
+            if (key == 'MediaNextTrack' || key == 'Cmd+Shift+Option+7') next()
+        })
+    </script>
 </body>
 </html>
